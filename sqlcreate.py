@@ -1,4 +1,3 @@
-
 #class to provide utility for extracting csv data
 #upon creating a CsvFile object you must call .fill() to fill the data
 
@@ -26,13 +25,13 @@ def find_all_types(data, key, index=1, types ='VARCHAR'):
 	dlist = [x[key] for x in data]
 	try:
 		intlist = [int(x) for x in dlist]
-		if len(intlist) == len(dlist):
-			return 'INT'
+
+		return 'INT'
 	except ValueError:	
 		try:
 			floatlist = [float(x) for x in dlist]
-			if len(floatlist) == len(dlist):
-				return 'DECIMAL'
+
+			return 'DECIMAL'
 		except ValueError:
 			return 'CHAR'
 		
